@@ -298,8 +298,11 @@ class Agent:
         """Method is used to delete property from property list."""
         try:
             print("Here are all the properties")
-            a = [(print("Property number\n" + str(x+1)+"."), y.display())
-                 for x,y in enumerate(self.property_list)]
+
+            for x, y in enumerate(self.property_list):
+                print("Property number\n" + str(x + 1) + ".")
+                y.display()
+
             del self.property_list[int(input("Choose property to del: ")) - 1]
         except ValueError:
             print("Enter valid index!")
